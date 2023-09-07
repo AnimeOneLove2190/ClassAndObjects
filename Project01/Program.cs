@@ -151,6 +151,7 @@ namespace Project01
             techService.WriteList(sortProductionYearMovies);
             List<Movie> sortPremiereDateMovies = movieService.SortMoviesByPremiereDate(movies);
             techService.WriteList(sortPremiereDateMovies);
+            ClassA classA = new ClassA();
         }
     }
 }
