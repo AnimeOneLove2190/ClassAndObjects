@@ -153,6 +153,7 @@ namespace Project01
             techService.WriteList(sortPremiereDateMovies);
             ClassA classA = new ClassA();
             ClassB classB = new ClassB();
+            ClassC classC = new ClassC();
         }
     }
 }
