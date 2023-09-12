@@ -154,6 +154,8 @@ namespace Project01
             ClassA classA = new ClassA();
             ClassB classB = new ClassB();
             ClassC classC = new ClassC();
+            classA.Id = 57;
+
         }
     }
 }
