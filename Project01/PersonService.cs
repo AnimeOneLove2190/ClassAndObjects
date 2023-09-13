@@ -134,7 +134,7 @@ namespace Project01
             {
                 for (int j = 0; j < list.Count - i - 1; j++)
                 {
-                    if (list[j].Name[0] > list[j + 1].Name[0])
+                    if ((string.Compare(list[j].Name, list[j + 1].Name)) > 0)
                     {
                         Person tempPerson = list[j];
                         list[j] = list[j + 1];
