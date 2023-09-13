@@ -14,12 +14,11 @@ namespace Project01
                 return null;
             }
             List<int> evenList = new List<int>();
-            for (int i = 0, j = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 if (list[i] % 2 == 0)
                 {
                     evenList.Add(list[i]);
-                    j++;
                 }
             }
             return evenList;
