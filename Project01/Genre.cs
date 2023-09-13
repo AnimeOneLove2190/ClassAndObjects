@@ -6,17 +6,17 @@ namespace Project01
 {
     enum Genre
     {
-        anime,
-        multfilm,
-        fantastic,
-        adventure,
-        family,
-        melodrama,
-        drama,
-        action,
-        fantasy,
-        darkFantasy,
-        postApocalyptic,
-        cruelty
+        Anime,
+        Multfilm,
+        Fantastic,
+        Adventure,
+        Family,
+        Melodrama,
+        Drama,
+        Action,
+        Fantasy,
+        DarkFantasy,
+        PostApocalyptic,
+        Cruelty
     }
 }

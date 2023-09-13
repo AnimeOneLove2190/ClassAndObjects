@@ -28,22 +28,15 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMinAge");
                 return null;
             }
-            int minAge = list[0].Age;
+            Person personWithMinAge = list[0];
             for (int i = 0; i < list.Count; i++)
             {
-                if (minAge > list[i].Age)
+                if (personWithMinAge.Age > list[i].Age)
                 {
-                    minAge = list[i].Age;
+                    personWithMinAge = list[i];
                 }
             }
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].Age == minAge)
-                {
-                    return list[i];
-                }
-            }
-            return null;
+            return personWithMinAge;
         }
         public Person GetPersonWithMaxAge(List<Person> list)
         {
@@ -52,22 +45,15 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMaxAge");
                 return null;
             }
-            int maxAge = list[0].Age;
+            Person personWithMaxAge = list[0];
             for (int i = 0; i < list.Count; i++)
             {
-                if (maxAge < list[i].Age)
+                if (personWithMaxAge.Age < list[i].Age)
                 {
-                    maxAge = list[i].Age;
+                    personWithMaxAge = list[i];
                 }
             }
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].Age == maxAge)
-                {
-                    return list[i];
-                }
-            }
-            return null;
+            return personWithMaxAge;
         }
         public Person GetPersonWithMinWeight(List<Person> list)
         {
@@ -76,22 +62,15 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMinWeight");
                 return null;
             }
-            int minWeight = list[0].Weight;
+            Person personWithMinWeight = list[0];
             for (int i = 0; i < list.Count; i++)
             {
-                if (minWeight > list[i].Weight)
+                if (personWithMinWeight.Weight > list[i].Weight)
                 {
-                    minWeight = list[i].Weight;
+                    personWithMinWeight = list[i];
                 }
             }
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].Weight == minWeight)
-                {
-                    return list[i];
-                }
-            }
-            return null;
+            return personWithMinWeight;
         }
         public Person GetPersonWithMaxWeight(List<Person> list)
         {
@@ -100,22 +79,15 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMaxWeight");
                 return null;
             }
-            int maxWeight = list[0].Weight;
+            Person personWithMaxWeight = list[0];
             for (int i = 0; i < list.Count; i++)
             {
-                if (maxWeight < list[i].Weight)
+                if (personWithMaxWeight.Weight < list[i].Weight)
                 {
-                    maxWeight = list[i].Weight;
+                    personWithMaxWeight = list[i];
                 }
             }
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].Weight == maxWeight)
-                {
-                    return list[i];
-                }
-            }
-            return null;
+            return personWithMaxWeight;
         }
         public Person GetPersonWithMinHeight(List<Person> list)
         {
@@ -124,22 +96,15 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMinAge");
                 return null;
             }
-            int minHeight = list[0].Height;
+            Person personWithMinHeight = list[0];
             for (int i = 0; i < list.Count; i++)
             {
-                if (minHeight > list[i].Height)
+                if (personWithMinHeight.Height > list[i].Height)
                 {
-                    minHeight = list[i].Height;
+                    personWithMinHeight = list[i];
                 }
             }
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].Height == minHeight)
-                {
-                    return list[i];
-                }
-            }
-            return null;
+            return personWithMinHeight;
         }
         public Person GetPersonWithMaxHeight(List<Person> list)
         {
@@ -148,22 +113,15 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMinAge");
                 return null;
             }
-            int maxHeight = list[0].Height;
+            Person personWithMaxHeight = list[0];
             for (int i = 0; i < list.Count; i++)
             {
-                if (maxHeight < list[i].Height)
+                if (personWithMaxHeight.Height < list[i].Height)
                 {
-                    maxHeight = list[i].Height;
+                    personWithMaxHeight = list[i];
                 }
             }
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].Height == maxHeight)
-                {
-                    return list[i];
-                }
-            }
-            return null;
+            return personWithMaxHeight;
         }
         public List<Person> SortPersonByName(List<Person> list)
         {
@@ -172,34 +130,19 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMinAge");
                 return null;
             }
-            char[] charArray = new char[list.Count];
-            for (int i = 0; i < charArray.Length; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                charArray[i] = list[i].Name[0];
-            }
-            techService.BubbleSort(charArray);
-            List<Person> nameSortList = new List<Person>();
-            for (int i = 0; i < charArray.Length; i++)
-            {
-                for (int j = 0; j < list.Count; j++)
+                for (int j = 0; j < list.Count - i - 1; j++)
                 {
-                    if (list[j].Name[0] == charArray[i])
+                    if (list[j].Name[0] > list[j + 1].Name[0])
                     {
-                        nameSortList.Add(list[j]);
+                        Person tempPerson = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = tempPerson;
                     }
                 }
             }
-            for (int i = 0; i < nameSortList.Count; i++)
-            {
-                for (int j = i + 1; j < nameSortList.Count; j++)
-                {
-                    if (nameSortList[i] == nameSortList[j])
-                    {
-                        nameSortList.RemoveAt(j);
-                    }
-                }
-            }
-            return nameSortList;
+            return list;
         }
         public List<Person> SortPersonByAge(List<Person> list)
         {
@@ -208,34 +151,19 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMinAge");
                 return null;
             }
-            int[] numberArray = new int[list.Count];
-            for (int i = 0; i < numberArray.Length; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                numberArray[i] = list[i].Age;
-            }
-            techService.BubbleSort(numberArray);
-            List<Person> ageSortList = new List<Person>();
-            for (int i = 0; i < numberArray.Length; i++)
-            {
-                for (int j = 0; j < list.Count; j++)
+                for (int j = 0; j < list.Count - i - 1; j++)
                 {
-                    if (list[j].Age == numberArray[i])
+                    if (list[j].Age > list[j + 1].Age)
                     {
-                        ageSortList.Add(list[j]);
+                        Person tempPerson = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = tempPerson;
                     }
                 }
             }
-            for (int i = 0; i < ageSortList.Count; i++)
-            {
-                for (int j = i + 1; j < ageSortList.Count; j++)
-                {
-                    if (ageSortList[i] == ageSortList[j])
-                    {
-                        ageSortList.RemoveAt(j);
-                    }
-                }
-            }
-            return ageSortList;
+            return list;
         }
         public List<Person> SortPersonByWeight(List<Person> list)
         {
@@ -244,34 +172,19 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMinAge");
                 return null;
             }
-            int[] numberArray = new int[list.Count];
-            for (int i = 0; i < numberArray.Length; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                numberArray[i] = list[i].Weight;
-            }
-            techService.BubbleSort(numberArray);
-            List<Person> weightSortList = new List<Person>();
-            for (int i = 0; i < numberArray.Length; i++)
-            {
-                for (int j = 0; j < list.Count; j++)
+                for (int j = 0; j < list.Count - i - 1; j++)
                 {
-                    if (list[j].Weight == numberArray[i])
+                    if (list[j].Weight > list[j + 1].Weight)
                     {
-                        weightSortList.Add(list[j]);
+                        Person tempPerson = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = tempPerson;
                     }
                 }
             }
-            for (int i = 0; i < weightSortList.Count; i++)
-            {
-                for (int j = i + 1; j < weightSortList.Count; j++)
-                {
-                    if (weightSortList[i] == weightSortList[j])
-                    {
-                        weightSortList.RemoveAt(j);
-                    }
-                }
-            }
-            return weightSortList;
+            return list;
         }
         public List<Person> SortPersonByHeight(List<Person> list)
         {
@@ -280,34 +193,19 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMinAge");
                 return null;
             }
-            int[] numberArray = new int[list.Count];
-            for (int i = 0; i < numberArray.Length; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                numberArray[i] = list[i].Height;
-            }
-            techService.BubbleSort(numberArray);
-            List<Person> heightSortList = new List<Person>();
-            for (int i = 0; i < numberArray.Length; i++)
-            {
-                for (int j = 0; j < list.Count; j++)
+                for (int j = 0; j < list.Count - i - 1; j++)
                 {
-                    if (list[j].Height == numberArray[i])
+                    if (list[j].Height > list[j + 1].Height)
                     {
-                        heightSortList.Add(list[j]);
+                        Person tempPerson = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = tempPerson;
                     }
                 }
             }
-            for (int i = 0; i < heightSortList.Count; i++)
-            {
-                for (int j = i + 1; j < heightSortList.Count; j++)
-                {
-                    if (heightSortList[i] == heightSortList[j])
-                    {
-                        heightSortList.RemoveAt(j);
-                    }
-                }
-            }
-            return heightSortList;
+            return list;
         }
     }
 }

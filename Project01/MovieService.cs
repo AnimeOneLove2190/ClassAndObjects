@@ -28,22 +28,15 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetMovieWithMinProductionYear");
                 return null;
             }
-            int minAge = list[0].ProductionYear;
+            Movie movieWithMinProductionYear = list[0];
             for (int i = 0; i < list.Count; i++)
             {
-                if (minAge > list[i].ProductionYear)
+                if (movieWithMinProductionYear.ProductionYear > list[i].ProductionYear)
                 {
-                    minAge = list[i].ProductionYear;
+                    movieWithMinProductionYear = list[i];
                 }
             }
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].ProductionYear == minAge)
-                {
-                    return list[i];
-                }
-            }
-            return null;
+            return movieWithMinProductionYear;
         }
         public Movie GetMovieWithMaxDuration(List<Movie> list)
         {
@@ -52,22 +45,15 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetMovieWithMaxDuration");
                 return null;
             }
-            int minValue = list[0].Duration;
+            Movie movieWithMaxDuration = list[0];
             for (int i = 0; i < list.Count; i++)
             {
-                if (minValue < list[i].Duration)
+                if (movieWithMaxDuration.Duration < list[i].Duration)
                 {
-                    minValue = list[i].Duration;
+                    movieWithMaxDuration = list[i];
                 }
             }
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].Duration == minValue)
-                {
-                    return list[i];
-                }
-            }
-            return null;
+            return movieWithMaxDuration;
         }
         public List<Movie> GetMoviesWithSelectedAgeLimit(List<Movie> list, int selectedAgeLimit)
         {
@@ -93,34 +79,19 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPersonWithMinAge");
                 return null;
             }
-            int[] numberArray = new int[list.Count];
-            for (int i = 0; i < numberArray.Length; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                numberArray[i] = list[i].ProductionYear;
-            }
-            techService.BubbleSort(numberArray);
-            List<Movie> ageSortList = new List<Movie>();
-            for (int i = 0; i < numberArray.Length; i++)
-            {
-                for (int j = 0; j < list.Count; j++)
+                for (int j = 0; j < list.Count - i - 1; j++)
                 {
-                    if (list[j].ProductionYear == numberArray[i])
+                    if (list[j].ProductionYear > list[j + 1].ProductionYear)
                     {
-                        ageSortList.Add(list[j]);
+                        Movie tempMovie = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = tempMovie;
                     }
                 }
             }
-            for (int i = 0; i < ageSortList.Count; i++)
-            {
-                for (int j = i + 1; j < ageSortList.Count; j++)
-                {
-                    if (ageSortList[i] == ageSortList[j])
-                    {
-                        ageSortList.RemoveAt(j);
-                    }
-                }
-            }
-            return ageSortList;
+            return list;
         }
         public List<Movie> SortMoviesByPremiereDate(List<Movie> list)
         {
@@ -129,34 +100,19 @@ namespace Project01
                 Console.WriteLine("Сработала защита в SortMoviesByPremiereDate");
                 return null;
             }
-            DateTime[] dateArray = new DateTime[list.Count];
-            for (int i = 0; i < dateArray.Length; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                dateArray[i] = list[i].PremiereDate;
-            }
-            techService.BubbleSort(dateArray);
-            List<Movie> ageSortList = new List<Movie>();
-            for (int i = 0; i < dateArray.Length; i++)
-            {
-                for (int j = 0; j < list.Count; j++)
+                for (int j = 0; j < list.Count - i - 1; j++)
                 {
-                    if (list[j].PremiereDate == dateArray[i])
+                    if (list[j].PremiereDate > list[j + 1].PremiereDate)
                     {
-                        ageSortList.Add(list[j]);
+                        Movie tempMovie = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = tempMovie;
                     }
                 }
             }
-            for (int i = 0; i < ageSortList.Count; i++)
-            {
-                for (int j = i + 1; j < ageSortList.Count; j++)
-                {
-                    if (ageSortList[i] == ageSortList[j])
-                    {
-                        ageSortList.RemoveAt(j);
-                    }
-                }
-            }
-            return ageSortList;
+            return list;
         }
     }
 }

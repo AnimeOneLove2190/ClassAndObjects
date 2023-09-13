@@ -70,51 +70,51 @@ namespace Project01
             }
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i] == Genre.anime)
+                if (list[i] == Genre.Anime)
                 {
                     Console.Write("anime, ");
                 }
-                if (list[i] == Genre.multfilm)
+                if (list[i] == Genre.Multfilm)
                 {
                     Console.Write("multfilm, ");
                 }
-                if (list[i] == Genre.fantastic)
+                if (list[i] == Genre.Fantastic)
                 {
                     Console.Write("fantastic, ");
                 }
-                if (list[i] == Genre.adventure)
+                if (list[i] == Genre.Adventure)
                 {
                     Console.Write("adventure, ");
                 }
-                if (list[i] == Genre.family)
+                if (list[i] == Genre.Family)
                 {
                     Console.Write("family, ");
                 }
-                if (list[i] == Genre.melodrama)
+                if (list[i] == Genre.Melodrama)
                 {
                     Console.Write("melodrama, ");
                 }
-                if (list[i] == Genre.drama)
+                if (list[i] == Genre.Drama)
                 {
                     Console.Write("drama, ");
                 }
-                if (list[i] == Genre.action)
+                if (list[i] == Genre.Action)
                 {
                     Console.Write("action, ");
                 }
-                if (list[i] == Genre.fantasy)
+                if (list[i] == Genre.Fantasy)
                 {
                     Console.Write("fantasy, ");
                 }
-                if (list[i] == Genre.darkFantasy)
+                if (list[i] == Genre.DarkFantasy)
                 {
                     Console.Write("dark fantasy, ");
                 }
-                if (list[i] == Genre.postApocalyptic)
+                if (list[i] == Genre.PostApocalyptic)
                 {
                     Console.Write("post-apocalyptic, ");
                 }
-                if (list[i] == Genre.cruelty)
+                if (list[i] == Genre.Cruelty)
                 {
                     Console.Write("cruelty, ");
                 }

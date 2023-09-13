@@ -13,16 +13,8 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetEvenList");
                 return null;
             }
-            int countOfNumbers = 0;
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i] % 2 == 0)
-                {
-                    countOfNumbers++;
-                }
-            }
             List<int> evenList = new List<int>();
-            for (int i = 0, j = 0; j < countOfNumbers && i < list.Count; i++)
+            for (int i = 0, j = 0; i < list.Count; i++)
             {
                 if (list[i] % 2 == 0)
                 {
@@ -39,16 +31,8 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetOddList");
                 return null;
             }
-            int countOfNumbers = 0;
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (!(list[i] % 2 == 0))
-                {
-                    countOfNumbers++;
-                }
-            }
-            List<int> oddList = new List<int>(countOfNumbers);
-            for (int i = 0, j = 0; j < countOfNumbers && i < list.Count; i++)
+            List<int> oddList = new List<int>();
+            for (int i = 0, j = 0; i < list.Count; i++)
             {
                 if (!(list[i] % 2 == 0))
                 {
@@ -65,16 +49,8 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetPositiveList");
                 return null;
             }
-            int countOfNumbers = 0;
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i] > 0)
-                {
-                    countOfNumbers++;
-                }
-            }
-            List<int> positiveList = new List<int>(countOfNumbers);
-            for (int i = 0, j = 0; j < countOfNumbers && i < list.Count; i++)
+            List<int> positiveList = new List<int>();
+            for (int i = 0, j = 0; i < list.Count; i++)
             {
                 if (list[i] > 0)
                 {
@@ -91,16 +67,8 @@ namespace Project01
                 Console.WriteLine("Сработала защита в GetNegativeList");
                 return null;
             }
-            int countOfNumbers = 0;
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i] < 0)
-                {
-                    countOfNumbers++;
-                }
-            }
-            List<int> negativeList = new List<int>(countOfNumbers);
-            for (int i = 0, j = 0; j < countOfNumbers && i < list.Count; i++)
+            List<int> negativeList = new List<int>();
+            for (int i = 0, j = 0; i < list.Count; i++)
             {
                 if (list[i] < 0)
                 {
