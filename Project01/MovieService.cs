@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Project01
 {
-    class MovieService
+    class MovieService : IWatchable
     {
         readonly TechnicalService techService = new TechnicalService();
         public List<string> GetListOfNames(List<Movie> list)

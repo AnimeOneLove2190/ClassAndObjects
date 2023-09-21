@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Project01
 {
-    class PersonService
+    class PersonService : IRecognizable
     {
         readonly TechnicalService techService = new TechnicalService();
         public List<string> GetListOfNames(List<Person> list)
