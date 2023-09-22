@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Project01
 {
-    class TechnicalService
+    class TechnicalService : IIncredible
     {
         Genre genre = new Genre();
         public void WriteList(List<string> list)

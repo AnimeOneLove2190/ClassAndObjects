@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Project01
 {
-    class IntegerListService
+    class IntegerListService : ICalculable
     {
         public List<int> GetEvenList(List<int> list)
         {
